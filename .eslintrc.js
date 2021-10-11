@@ -12,7 +12,7 @@ module.exports = {
   rules: {
     '@typescript-eslint/explicit-function-return-type': 0,
     '@typescript-eslint/explicit-module-boundary-types': 0,
-    '@typescript-eslint/no-explicit-any': "off",
+    '@typescript-eslint/no-explicit-any': 2,
     '@typescript-eslint/indent': 0,
     '@typescript-eslint/camelcase': 0,
     "react-hooks/rules-of-hooks": "error",
