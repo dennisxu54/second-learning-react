@@ -43,6 +43,7 @@ function HomePage() {
         </label>
         <input type="submit" />
       </form>
+
     </div>
   );
 }
