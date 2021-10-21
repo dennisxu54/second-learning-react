@@ -1,17 +1,36 @@
 import React, { useState } from "react";
 import "./home-page.css";
+import { Priority } from "../../interfaces/types";
+import { ToDoItem } from '../../interfaces/interfaces';
+import { addItemToList}  from '../../store/actions/list';
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import { RootState } from '../../store/store';
 
 function HomePage() {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
-  type priorityType = "LOW" | "MEDIUM" | "HIGH" | string;
-  const [priority, setPriority] = useState<priorityType>("LOW");
+  const [priority, setPriority] = useState<Priority>("LOW");
+  
+  const list = useSelector((state: RootState) => state.list.list);
+  const dispatch = useDispatch();
 
   const handleSubmit = () => {
-    alert(
-      `The title you entered was: ${title} and the description was: ${description} with the priority: ${priority}`
-    );
+    const item: ToDoItem = {
+      priority,
+      title,
+      description
+    }
+
+    // 'dispatch'ing is a way to make the redux store change
+    // 'select'ing is a way to get stuff from the redux store
+    // useDispatch and useSelector
+    dispatch(addItemToList(item));
   };
+
+  useEffect(() => {
+    console.log(list);
+  }, [list])
 
   return (
     <div className="App">
@@ -35,13 +54,18 @@ function HomePage() {
         </label>
         <label>
           Priority:
-          <select value={priority} onChange={(e) => setPriority(e.target.value)}>
+          <select
+            value={priority}
+            onChange={(e) => setPriority(e.target.value)}
+          >
             <option value="LOW">LOW</option>
             <option value="MEDIUM">MEDIUM</option>
             <option value="HIGH">HIGH</option>
           </select>
         </label>
-        <input type="submit" />
+        <button type="submit" onClick={(event: React.MouseEvent) => {event.preventDefault(); handleSubmit()}}>
+          Add to list
+          </button>
       </form>
     </div>
   );
