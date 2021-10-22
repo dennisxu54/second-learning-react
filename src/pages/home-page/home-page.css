@@ -39,3 +39,12 @@ label input {
 label select {
   margin-left: 6px;
 }
+
+div {
+  margin-top: 1em;
+}
+
+.page-link {
+  color: white;
+  margin-top: 1em;
+}
