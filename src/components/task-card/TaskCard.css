@@ -1,0 +1,60 @@
+.task-box {
+  display: block;
+  border: 1px solid red;
+  height: auto;
+  width: 50%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.options-button {
+  margin: 8px;
+  border-radius: 12px;
+  transition-duration: 0.4s;
+}
+
+.options-button:hover {
+  background-color: #4caf50;
+  color: white;
+}
+
+.collapse-content {
+    overflow: hidden;
+    max-height: 0;
+    margin: auto;
+    width: 50%;
+    border: 2px solid #dee2e6;
+    margin-bottom: 8px;
+
+  opacity: 0;
+  transition: all 0.5s ease;
+  z-index: -1;
+}
+
+.collapse-content.show {
+    max-height: 3em;
+  opacity: 1;
+}
+
+.left-button {
+  border-radius: 12px;
+  transition-duration: 0.4s;
+  margin: 8px;
+}
+
+.left-button:hover {
+  background-color: #b33b3b;
+  color: white;
+}
+
+.right-button {
+  border-radius: 12px;
+  transition-duration: 0.4s;
+  margin: 8px;
+}
+
+.right-button:hover {
+  background-color: #b33b3b;
+  color: white;
+}

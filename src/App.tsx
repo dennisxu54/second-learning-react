@@ -1,12 +1,11 @@
 import React from "react";
-import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import HomePage from "./pages/home-page";
 import TaskPage from "./pages/task-page";
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <Router>
       <Switch>
           <Route exact path="/">

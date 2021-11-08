@@ -10,6 +10,7 @@ type ActionType = "ADD_TO_LIST" | "REMOVE_FROM_LIST" | "CLEAR_LIST";
 interface Action {
   type: ActionType;
   item?: ToDoItem;
+  id?: number;
 }
 
 const initialState: ReducerState = {
@@ -30,8 +31,12 @@ const reducer = (state: ReducerState = initialState, action: Action) => {
       else return state;
 
     case "REMOVE_FROM_LIST":
-      // stub implementation - do this later yourself
-      return state
+      if (action.id) {
+        return {
+          list: state.list.filter((item: ToDoItem) => item.id !== action.id)
+        }
+      }
+      else return state;
     case "CLEAR_LIST":
       // stub implementation - do this later yourself
       return state
