@@ -7,4 +7,11 @@ export const addItemToList = (item: ToDoItem) => {
   }
 }
 
+export const removeItemToList = (id: number) => {
+  return {
+    type: "REMOVE_FROM_LIST",
+    id
+  }
+}
+
 // so all you need to do, is call this function which as the "ADD" key, so it will trigger

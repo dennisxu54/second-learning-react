@@ -12,7 +12,7 @@ function HomePage() {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [priority, setPriority] = useState<Priority>("LOW");
-  const [id, setID] = useState(0)
+  const [id, setID] = useState(Date.now());
 
   const list = useSelector((state: RootState) => state.list.list);
   const dispatch = useDispatch();
@@ -29,10 +29,10 @@ function HomePage() {
     // 'select'ing is a way to get stuff from the redux store
     // useDispatch and useSelector
     dispatch(addItemToList(item));
-    setID(id + 1)
-    setTitle("")
-    setDescription("")
-    setPriority("LOW")
+    setID(Date.now());
+    setTitle("");
+    setDescription("");
+    setPriority("LOW");
   };
 
   useEffect(() => {
@@ -41,7 +41,7 @@ function HomePage() {
 
   return (
     <div className="App">
-      <h1 style={{ color: "white" }}>Welcome to learning TypeScript</h1>
+      <h1>Welcome to learning TypeScript</h1>
       <form onSubmit={handleSubmit}>
         <label>
           Title:
@@ -80,11 +80,14 @@ function HomePage() {
           Add to list
         </button>
       </form>
-      <div>
-        <Link className="page-link" to="/task">
+      <>
+        <Link
+          to="/task"
+          style={{ textDecoration: "none", display: "inline-block", marginTop: 8 }}
+        >
           Tasks Page
         </Link>
-      </div>
+      </>
     </div>
   );
 }
