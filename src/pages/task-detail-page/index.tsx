@@ -14,7 +14,7 @@ function TaskDetailPage() {
   const { id } = useParams<NumberParams>();
   const idNumber = parseInt(id);
   const filteredList = list.filter((item: ToDoItem) => item.id === idNumber)
-  const selectedItem = filteredList ? filteredList[0] : "";
+  const selectedItem = filteredList.length > 0 ? filteredList[0] : "";
 
   return (
     <>
