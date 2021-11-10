@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 import { ToDoItem } from "../../interfaces/interfaces";
 import { removeItemToList } from "../../store/actions/list";
 import "./TaskCard.css";
@@ -14,7 +15,7 @@ const TaskCard = ({ item }: Props) => {
   const [isCollapsed, setIsCollapsed] = useState(false);
   const dispatch = useDispatch();
 
-  function deletItem() {
+  function deleteItem() {
     dispatch(removeItemToList(id));
     setIsCollapsed(!isCollapsed);
   }
@@ -36,18 +37,24 @@ const TaskCard = ({ item }: Props) => {
           {priority}
         </span>
       </div>
-      <div className={`collapse-content ${isCollapsed ? " show" : ""} `} id="optionsExpand">
+      <div
+        className={`collapse-content ${isCollapsed ? " show" : ""} `}
+        id="optionsExpand"
+      >
         <div>
           <div>
             <button
-              className="left-button"
+              className="close-button"
               onClick={() => setIsCollapsed(!isCollapsed)}
             >
               close
             </button>
-            <button className="right-button" onClick={() => deletItem()}>
+            <button className="delete-button" onClick={() => deleteItem()}>
               delete
-            </button>{" "}
+            </button>
+            <Link to={`/task-detail/${id}`}>
+              <button className="info-button">More Info</button>
+            </Link>
           </div>
         </div>
       </div>

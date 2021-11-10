@@ -37,24 +37,34 @@
   opacity: 1;
 }
 
-.left-button {
+.close-button {
   border-radius: 12px;
   transition-duration: 0.4s;
   margin: 8px;
 }
 
-.left-button:hover {
+.close-button:hover {
   background-color: #b33b3b;
   color: white;
 }
 
-.right-button {
+.delete-button {
   border-radius: 12px;
   transition-duration: 0.4s;
   margin: 8px;
 }
 
-.right-button:hover {
+.delete-button:hover {
   background-color: #b33b3b;
+  color: white;
+}
+
+.info-button {
+  transition-duration: 0.4s;
+  margin: 8px;
+}
+
+.info-button:hover {
+  background-color: green;
   color: white;
 }
