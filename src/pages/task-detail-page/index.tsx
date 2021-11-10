@@ -13,7 +13,7 @@ function TaskDetailPage() {
   const list = useSelector((state: RootState) => state.list.list);
   const { id } = useParams<NumberParams>();
   const idNumber = parseInt(id);
-  const selectedItem = list.filter((item: ToDoItem) => item.id === idNumber);
+  const selectedItem = list.length !== 0 ? list.filter((item: ToDoItem) => item.id === idNumber)[0] : "";
 
   return (
     <>
@@ -28,11 +28,9 @@ function TaskDetailPage() {
         Return to Tasks Page
       </Link>
       {selectedItem ? (
-          selectedItem.map((item: ToDoItem) => (
             <TaskDetail
-            itemDetail={item}
+            itemDetail={selectedItem}
             /> 
-          ))
       ) : (
         <h2>There is no ToDo Item with id: {id}</h2>
       )}
