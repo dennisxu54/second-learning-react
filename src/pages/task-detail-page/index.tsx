@@ -13,7 +13,8 @@ function TaskDetailPage() {
   const list = useSelector((state: RootState) => state.list.list);
   const { id } = useParams<NumberParams>();
   const idNumber = parseInt(id);
-  const selectedItem = list.length !== 0 ? list.filter((item: ToDoItem) => item.id === idNumber)[0] : "";
+  const filteredList = list.filter((item: ToDoItem) => item.id === idNumber)
+  const selectedItem = filteredList ? filteredList[0] : "";
 
   return (
     <>
