@@ -1,0 +1,22 @@
+.detail-box {
+    text-align: center;
+}
+
+.detail-content {
+    border: 2px solid gray;
+    border-radius: 5px;
+    width: 25%;
+    margin: auto;
+}
+
+p i {
+    color: red;
+}
+
+.id {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.title {
+    font-family: sans-serif;
+}

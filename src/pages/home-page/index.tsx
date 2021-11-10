@@ -3,9 +3,7 @@ import "./home-page.css";
 import { Priority } from "../../interfaces/types";
 import { ToDoItem } from "../../interfaces/interfaces";
 import { addItemToList } from "../../store/actions/list";
-import { useDispatch, useSelector } from "react-redux";
-import { useEffect } from "react";
-import { RootState } from "../../store/store";
+import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 
 function HomePage() {
@@ -14,7 +12,7 @@ function HomePage() {
   const [priority, setPriority] = useState<Priority>("LOW");
   const [id, setID] = useState(Date.now());
 
-  const list = useSelector((state: RootState) => state.list.list);
+  // const list = useSelector((state: RootState) => state.list.list);
   const dispatch = useDispatch();
 
   const handleSubmit = () => {
@@ -35,9 +33,9 @@ function HomePage() {
     setPriority("LOW");
   };
 
-  useEffect(() => {
-    console.log(list);
-  }, [list]);
+  // useEffect(() => {
+  //   console.log(list);
+  // }, [list]);
 
   return (
     <div className="App">
