@@ -12,7 +12,6 @@ function HomePage() {
   const [priority, setPriority] = useState<Priority>("LOW");
   const [id, setID] = useState(Date.now());
 
-  // const list = useSelector((state: RootState) => state.list.list);
   const dispatch = useDispatch();
 
   const handleSubmit = () => {
@@ -32,10 +31,6 @@ function HomePage() {
     setDescription("");
     setPriority("LOW");
   };
-
-  // useEffect(() => {
-  //   console.log(list);
-  // }, [list]);
 
   return (
     <div className="App">
