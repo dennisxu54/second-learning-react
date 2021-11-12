@@ -1,16 +1,18 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./home-page.css";
 import { Priority } from "../../interfaces/types";
 import { ToDoItem } from "../../interfaces/interfaces";
 import { addItemToList } from "../../store/actions/list";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { RootState } from "../../store/store";
 
 function HomePage() {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [priority, setPriority] = useState<Priority>("LOW");
   const [id, setID] = useState(Date.now());
+  const list = useSelector((state: RootState) => state.list.list);
 
   const dispatch = useDispatch();
 
@@ -26,12 +28,15 @@ function HomePage() {
     // 'select'ing is a way to get stuff from the redux store
     // useDispatch and useSelector
     dispatch(addItemToList(item));
-    localStorage.setItem(id.toString(), JSON.stringify(item))
     setID(Date.now());
     setTitle("");
     setDescription("");
     setPriority("LOW");
   };
+
+  useEffect(() => {
+    localStorage.setItem("List", JSON.stringify(list))
+  }, [list])
 
   return (
     <div className="App">
