@@ -12,5 +12,7 @@ export const initialiseStore = () => {
 
 const store = initialiseStore();
 
+localStorage.setItem("List", JSON.stringify(store))
+
 // this is for typescript so we know what types are inside our store
 export type RootState = ReturnType<typeof store.getState>;

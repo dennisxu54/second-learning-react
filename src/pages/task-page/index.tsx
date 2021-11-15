@@ -7,7 +7,6 @@ import { ToDoItem } from "../../interfaces/interfaces";
 
 function TaskPage() {
   const list = useSelector((state: RootState) => state.list.list);
-  localStorage.setItem("List", JSON.stringify(list))
 
   return (
     <div>
