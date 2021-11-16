@@ -21,6 +21,7 @@ const initialState: ReducerState = {
 // call this to access the state
 
 const reducer = (state: ReducerState = initialState, action: Action) => {
+  
   switch (action.type) {
     case "ADD_TO_LIST":
       if (action.item) {
