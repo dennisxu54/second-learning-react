@@ -26,9 +26,7 @@ function HomePage() {
     // 'select'ing is a way to get stuff from the redux store
     // useDispatch and useSelector
     dispatch(addItemToList(item));
-    const dataItem = localStorage.getItem('list')
-    const newDataItem = dataItem ? dataItem + JSON.stringify(item) : JSON.stringify(item);
-    localStorage.setItem("list", newDataItem)
+    
     setID(Date.now());
     setTitle("");
     setDescription("");
