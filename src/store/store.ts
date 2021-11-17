@@ -7,12 +7,18 @@ export const initialiseStore = () => {
   // the combineReducers function takes an object,
   // the key is the name we register the reducer under
 
-  return createStore(combineReducers({ list: listReducer }));
+  let preLoadedState
+
+  const persistToDoItemString = localStorage.getItem("list")
+
+  if (persistToDoItemString) {
+    preLoadedState = { list: { list: JSON.parse(persistToDoItemString) } }
+  }
+
+  return createStore(combineReducers({ list: listReducer }), preLoadedState);
 }
 
 const store = initialiseStore();
-
-localStorage.setItem("List", JSON.stringify(store))
 
 // this is for typescript so we know what types are inside our store
 export type RootState = ReturnType<typeof store.getState>;

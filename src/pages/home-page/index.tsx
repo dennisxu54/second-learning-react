@@ -26,7 +26,6 @@ function HomePage() {
     // 'select'ing is a way to get stuff from the redux store
     // useDispatch and useSelector
     dispatch(addItemToList(item));
-    
     setID(Date.now());
     setTitle("");
     setDescription("");
