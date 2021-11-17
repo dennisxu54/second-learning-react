@@ -17,7 +17,6 @@ const TaskCard = ({ item }: Props) => {
 
   function deleteItem() {
     dispatch(removeItemToList(id));
-    
     setIsCollapsed(!isCollapsed);
   }
 

@@ -38,9 +38,11 @@ const reducer = (state: ReducerState = initialState, action: Action) => {
         }
       }
       else return state;
+      
     case "CLEAR_LIST":
       // stub implementation - do this later yourself
       return state
+
     default:
       return state;
   }

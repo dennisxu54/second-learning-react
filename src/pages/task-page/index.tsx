@@ -20,6 +20,7 @@ function TaskPage() {
         list.map((item: ToDoItem) => (
           <TaskCard
             item={item}
+            key={item.id}
           />
         ))
       )}
