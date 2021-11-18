@@ -2,14 +2,40 @@
   text-align: center;
 }
 
-label {
-  margin-right: 8px;
+.redux-store-detail {
+  margin-top: 3em;
 }
 
-label input {
+.redux-store-detail label {
+  margin-right: 3em;
+}
+
+.redux-store-detail label input {
+  margin-left: 8px;
+  padding-right: 3em;
+  box-shadow: 0 0 15px 4px darkgray;
+}
+
+.redux-store-detail label select {
   margin-left: 8px;
 }
 
-label select {
-  margin-left: 8px;
+.home-page-link-header {
+  text-align: left;
+  border: 2px solid green;
+  overflow: auto;
+  width: auto;
+  padding: 4px;
+}
+
+.add-to-store-button {
+  margin-top: 3em;
+  border-radius: 12px;
+  transition-duration: 0.4s;
+  background-color: white;
+}
+
+.add-to-store-button:hover {
+  background-color: darkgray; 
+  color: white;
 }

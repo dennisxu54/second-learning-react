@@ -10,19 +10,23 @@ function TaskPage() {
 
   return (
     <div>
-      <Link to="/" style={{ textDecoration: "none" }}>
-        Home Page
-      </Link>
+      <div className="task-page-link-header">
+        <Link
+          to="/"
+          style={{
+            textDecoration: "none",
+            display: "inline-block",
+            color: "black"
+          }}
+        >
+          Home Page
+        </Link>
+      </div>
       <h1>These are the tasks submitted so far:</h1>
       {list.length === 0 ? (
         <p>There are currently no tasks submitted.</p>
       ) : (
-        list.map((item: ToDoItem) => (
-          <TaskCard
-            item={item}
-            key={item.id}
-          />
-        ))
+        list.map((item: ToDoItem) => <TaskCard item={item} key={item.id} />)
       )}
     </div>
   );

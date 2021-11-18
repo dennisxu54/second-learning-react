@@ -30,11 +30,10 @@ const TaskCard = ({ item }: Props) => {
         >
           Options
         </button>
-        <span>
-          {id}. <b>Title: </b>
-          {title} <b>Priority: </b>
-          {description} <b>Description: </b>
-          {priority}
+        <span className="task-details">
+          <b>ID: </b> {id}.<b>Title: </b> {title ? title : "null"}
+          <b>Priority: </b> {description ? description : "null"}
+          <b>Description: </b> {priority}
         </span>
       </div>
       <div
@@ -42,20 +41,19 @@ const TaskCard = ({ item }: Props) => {
         id="optionsExpand"
       >
         <div>
-          <div>
-            <button
-              className="close-button"
-              onClick={() => setIsCollapsed(!isCollapsed)}
-            >
-              close
-            </button>
-            <button className="delete-button" onClick={() => deleteItem()}>
-              delete
-            </button>
-            <Link to={`/task-detail/${id}`}>
-              <button className="info-button">More Info</button>
-            </Link>
-          </div>
+          <button
+            className="close-button"
+            onClick={() => setIsCollapsed(!isCollapsed)}
+          >
+            close
+          </button>
+
+          <button className="delete-button" onClick={() => deleteItem()}>
+            delete
+          </button>
+          <Link to={`/task-detail/${id}`}>
+            <button className="info-button">More Info</button>
+          </Link>
         </div>
       </div>
     </>
