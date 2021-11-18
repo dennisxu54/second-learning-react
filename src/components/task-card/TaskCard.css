@@ -6,6 +6,11 @@
   text-align: center;
   margin-left: auto;
   margin-right: auto;
+  border-radius: 8px;
+}
+
+.task-details b {
+  margin-left: 2em;
 }
 
 .options-button {
@@ -20,20 +25,21 @@
 }
 
 .collapse-content {
-    overflow: hidden;
-    max-height: 0;
-    margin: auto;
-    width: 50%;
-    border: 2px solid #dee2e6;
-    margin-bottom: 8px;
-
+  text-align: center;
+  overflow: hidden;
+  max-height: 0;
+  margin: auto;
+  width: 50%;
+  border: 2px solid #dee2e6;
+  margin-bottom: 8px;
   opacity: 0;
   transition: all 0.5s ease;
   z-index: -1;
+  border-radius: 8px;
 }
 
 .collapse-content.show {
-    max-height: 3em;
+  max-height: 3em;
   opacity: 1;
 }
 
@@ -60,6 +66,7 @@
 }
 
 .info-button {
+  border-radius: 12px;
   transition-duration: 0.4s;
   margin: 8px;
 }

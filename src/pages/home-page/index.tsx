@@ -34,8 +34,20 @@ function HomePage() {
 
   return (
     <div className="App">
+      <div className="home-page-link-header">
+        <Link
+          to="/task"
+          style={{
+            textDecoration: "none",
+            display: "inline-block",
+            color: "red"
+          }}
+        >
+          Tasks Page
+        </Link>
+      </div>
       <h1>Welcome to learning TypeScript</h1>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="redux-store-detail">
         <label>
           Title:
           <input
@@ -63,8 +75,10 @@ function HomePage() {
             <option value="HIGH">HIGH</option>
           </select>
         </label>
+        <br />
         <button
           type="submit"
+          className="add-to-store-button"
           onClick={(event: React.MouseEvent) => {
             event.preventDefault();
             handleSubmit();
@@ -73,14 +87,6 @@ function HomePage() {
           Add to list
         </button>
       </form>
-      <>
-        <Link
-          to="/task"
-          style={{ textDecoration: "none", display: "inline-block", marginTop: 8 }}
-        >
-          Tasks Page
-        </Link>
-      </>
     </div>
   );
 }

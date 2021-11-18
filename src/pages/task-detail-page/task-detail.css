@@ -1,0 +1,13 @@
+.detail-page-link-header {
+  text-align: left;
+  border: 2px solid green;
+  overflow: auto;
+  width: auto;
+  padding: 4px;
+}
+
+.home-page-link {
+  text-decoration: "none";
+  display: "inline-block";
+  margin-right: 8;
+}
