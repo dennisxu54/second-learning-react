@@ -7,7 +7,10 @@
 }
 
 .redux-store-detail label {
-  margin-right: 3em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 8px;
 }
 
 .redux-store-detail label input {
@@ -29,10 +32,9 @@
 }
 
 .add-to-store-button {
-  margin-top: 3em;
   border-radius: 12px;
   transition-duration: 0.4s;
-  background-color: white;
+  background-color: darkgreen;
 }
 
 .add-to-store-button:hover {

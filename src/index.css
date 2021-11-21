@@ -12,4 +12,8 @@ code {
     monospace;
 }
 
-* {background-color: #CCCCCC}
+/* * {background-color: #CCCCCC}
+* {color: black;} */
+
+* {background-color: black}
+* {color: white;}
