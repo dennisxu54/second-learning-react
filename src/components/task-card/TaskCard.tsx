@@ -31,9 +31,10 @@ const TaskCard = ({ item }: Props) => {
           Options
         </button>
         <span className="task-details">
-          <b>ID: </b> {id}.<b>Title: </b> {title ? title : "null"}
-          <b>Priority: </b> {description ? description : "null"}
-          <b>Description: </b> {priority}
+          <span><b>ID:</b> {id}.</span>
+          {title && <span><b>Title:</b> {title}</span>  }
+          {description && <span><b>Description:</b> {description} </span>  }
+          <span><b>Priority:</b> {priority}</span>
         </span>
       </div>
       <div
