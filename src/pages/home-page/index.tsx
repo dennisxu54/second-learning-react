@@ -40,7 +40,7 @@ function HomePage() {
           style={{
             textDecoration: "none",
             display: "inline-block",
-            color: "red"
+            color: "red",
           }}
         >
           Tasks Page
@@ -56,6 +56,7 @@ function HomePage() {
             onChange={(e) => setTitle(e.target.value)}
           />
         </label>
+        <br />
         <label>
           Description:
           <input
@@ -64,6 +65,7 @@ function HomePage() {
             onChange={(e) => setDescription(e.target.value)}
           />
         </label>
+        <br />
         <label>
           Priority:
           <select

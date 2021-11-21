@@ -22,7 +22,7 @@ function TaskDetailPage() {
       <div className="detail-page-link-header">
         <Link
           to="/"
-          style={{ textDecoration: "none", display: "inline-block", marginRight: 8, color: "black", }}
+          style={{ textDecoration: "none", display: "inline-block", marginRight: 8, color: "red", }}
         >
           Return to Home Page
         </Link>

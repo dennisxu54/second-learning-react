@@ -16,7 +16,7 @@ function TaskPage() {
           style={{
             textDecoration: "none",
             display: "inline-block",
-            color: "black"
+            color: "red"
           }}
         >
           Home Page
